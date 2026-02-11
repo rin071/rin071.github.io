@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Digital Space | Let's Git It</title>
+    <style>
+        /* CSS: This makes it look beautiful */
+        :root {
+            --bg: #f4f7f6;
+            --card: #ffffff;
+            --text: #2d3436;
+            --accent: #0984e3;
+        }
+
+        [data-theme='dark'] {
+            --bg: #1e272e;
+            --card: #2f3640;
+            --text: #f5f6fa;
+            --accent: #00d2d3;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            transition: 0.3s;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            text-align: center;
+            width: 90%;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        p { color: var(--text); opacity: 0.8; line-height: 1.5; }
+
+        .links { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 10px; }
+
+        .btn {
+            text-decoration: none;
+            background: var(--accent);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        #theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            background: var(--card);
+            color: var(--text);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <button id="theme-toggle">Switch Theme</button>
+
+    <div class="card">
+        <div class="profile-emoji">👦</div>
+        
+        <h1>I'm [Your Name]</h1>
+        
+        <p>
+            Student at Model Engineering College <br>
+            Exploring the world of [Your Interest]
+        </p>
+
+        <div class="links">
+            <a href="https://github.com/[your-username]" class="btn">View My GitHub</a>
+            <a href="mailto:[your-email]@gmail.com" class="btn">Email Me</a>
+        </div>
+    </div>
+
+    <script>
+        /* JS: This adds the "Magic" switch */
+        const toggle = document.getElementById('theme-toggle');
+        toggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', targetTheme);
+        });
+    </script>
+</body>
+</html>
